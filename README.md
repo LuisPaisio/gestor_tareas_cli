@@ -14,12 +14,14 @@ Un gestor de tareas simple y modular hecho en Python, ejecutable desde la termin
 
 ## 📁 Estructura del proyecto
 
+```bash
 gestor_tareas_cli/ 
 ├── gestor.py # Punto de entrada principal 
 ├── tareas.py # Funciones de lógica de tareas 
 ├── helpers.py # Funciones auxiliares (opcional) 
 ├── tareas.json # Archivo de datos 
 ├── requirements.txt # Dependencias del proyecto
+```
 
 ## 🛠️ Instalación
 
