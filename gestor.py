@@ -2,6 +2,7 @@ import argparse
 
 from tareas import (
     agregar_tarea,
+    desmarcar_tarea,
     listar_tareas,
     completar_tarea,
     eliminar_tarea
@@ -11,12 +12,13 @@ def main():
     print("Bienvenido al gestor de tareas CLI")
 
     parser = argparse.ArgumentParser(description="Gestor de tareas CLI")
-    parser.add_argument("comando", choices=["agregar", "listar", "completar", "eliminar"], help="Comando a ejecutar")
+    parser.add_argument("comando", choices=["agregar", "listar", "completar", "eliminar", "desmarcar"], help="Comando a ejecutar")
     parser.add_argument("descripcion", nargs="?", help="Descripción o número de tarea")
     parser.add_argument("--completadas", action="store_true", help="Mostrar solo tareas completadas")
     parser.add_argument("--pendientes", action="store_true", help="Mostrar solo tareas pendientes")
     parser.add_argument("--hoy", action="store_true", help="Mostrar solo tareas creadas hoy")
     parser.add_argument("--ascendente", action="store_true", help="Ordenar por fecha ascendente")
+
 
     args = parser.parse_args()
 
@@ -45,6 +47,12 @@ def main():
             eliminar_tarea(args.descripcion)
         else:
             print("Por favor, proporcioná el número de la tarea a eliminar.")
+            
+    elif args.comando == "desmarcar":
+        if args.descripcion:
+            desmarcar_tarea(args.descripcion)
+        else:
+            print("Por favor, proporcioná el número de la tarea a desmarcar.")
 
 if __name__ == "__main__":
     main()

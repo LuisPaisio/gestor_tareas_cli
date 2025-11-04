@@ -89,6 +89,22 @@ def completar_tarea(numero):
     except ValueError:
         print(Fore.RED + "⚠️ Por favor, ingresá un número válido." + Style.RESET_ALL)
 
+def desmarcar_tarea(numero):
+    tareas = cargar_tareas()
+    try:
+        indice = int(numero) - 1
+        if 0 <= indice < len(tareas):
+            if not tareas[indice]["completada"]:
+                print(Fore.YELLOW + "⚠️ La tarea ya está pendiente." + Style.RESET_ALL)
+                return
+            tareas[indice]["completada"] = False
+            guardar_tareas(tareas)
+            print(Fore.GREEN + f"Tarea desmarcada: {tareas[indice]['descripcion']}" + Style.RESET_ALL)
+        else:
+            print(Fore.RED + "⚠️ Número de tarea inválido." + Style.RESET_ALL)
+    except ValueError:
+        print(Fore.RED + "⚠️ Por favor, ingresá un número válido." + Style.RESET_ALL)
+
 def eliminar_tarea(numero):
     tareas = cargar_tareas()
     try:
@@ -109,4 +125,5 @@ __all__ = [
     "listar_tareas",
     "completar_tarea",
     "eliminar_tarea"
+    "desmarcar_tarea"
 ]

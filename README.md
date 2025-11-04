@@ -1,6 +1,6 @@
-# 🧠 Gestor de Tareas CLI
+# 🧠 Gestor de Tareas CLI + Web
 
-Un gestor de tareas simple y modular hecho en Python, ejecutable desde la terminal. Permite agregar, listar, completar y eliminar tareas, con persistencia en formato JSON.
+Aplicación para gestionar tareas desde la terminal o desde una interfaz web. Permite agregar, listar, completar, desmarcar y eliminar tareas, con filtros por estado, fecha y orden. Desarrollado en Python con Flask.
 
 ## 🚀 Características
 
@@ -8,6 +8,9 @@ Un gestor de tareas simple y modular hecho en Python, ejecutable desde la termin
 - Listar tareas con estado (completada o pendiente)
 - Marcar tareas como completadas
 - Eliminar tareas por número
+- Filtros: completadas, pendientes, hoy, orden ascendente/descendente
+- Interfaz web con Flask
+- Estilos personalizados con CSS
 - Persistencia en `tareas.json`
 - Colores en terminal con `colorama`
 - Estructura modular para escalar fácilmente
@@ -50,36 +53,41 @@ pip install -r requirements.txt
 1. Agregar una tarea:
 
 ```bash
-python gestor.py agregar "Estudiar Python"
+python tareas.py agregar "Estudiar Python"
 ```
 
 2. Listar tareas:
 ```bash
-python gestor.py listar
+python tareas.py listar
 ```
 
 3. Filtrar tareas:
 ```bash
-python gestor.py listar --completadas
-python gestor.py listar --pendientes
-python gestor.py listar --hoy
-python gestor.py listar --ascendentes
+python tareas.py listar --completadas
+python tareas.py listar --pendientes
+python tareas.py listar --hoy
+python tareas.py listar --ascendentes
 ```
 
 4. Marcar como completada:
 ```bash
-python gestor.py completar 1
+python tareas.py completar 1
+```
+
+4. Desmarcar:
+```bash
+python tareas.py desmarcar 1
 ```
 
 5. Eliminar una tarea:
 ```bash
-python gestor.py eliminar 2
+python tareas.py eliminar 2
 ```
 
-## 📦 Requisitos
-
-- Python 3.10+
-- Colorama
+## 🌐 Uso Web
+```bash
+python app.py
+```
 
 ## ▶️ Ejecutar los tests
 
@@ -95,6 +103,11 @@ python -m tests.test_tareas
 - Eliminar tareas correctamente
 - Validaciones de entrada
 - Filtros por estado y fecha
+
+## 📦 Requisitos
+
+- Python 3.10+
+- Colorama
 
 ## 📌 Autor
 

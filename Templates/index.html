@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestor de Tareas Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Gestor de Tareas</h1>
+
+        <!-- Formulario para agregar tarea -->
+        <form action="/agregar" method="post">
+            <input type="text" name="descripcion" placeholder="Nueva tarea" required>
+            <button type="submit">Agregar</button>
+        </form>
+
+        <!-- Filtros -->
+        <form method="get" action="/">
+            <label><input type="checkbox" name="completadas" value="1" {% if request.args.get('completadas') %}checked{% endif %}> Completadas</label>
+            <label><input type="checkbox" name="pendientes" value="1" {% if request.args.get('pendientes') %}checked{% endif %}> Pendientes</label>
+            <label><input type="checkbox" name="hoy" value="1" {% if request.args.get('hoy') %}checked{% endif %}> Hoy</label>
+            <label><input type="checkbox" name="ascendente" value="1" {% if request.args.get('ascendente') %}checked{% endif %}> Ascendente</label>
+            <button type="submit">Filtrar</button>
+        </form>
+
+        <!-- Botón para limpiar filtros -->
+        <form method="get" action="/">
+            <button type="submit">🔄 Ver todas las tareas</button>
+        </form>
+
+        <!-- Lista de tareas -->
+        <ul>
+            {% for tarea in tareas %}
+                <li>
+                    <span class="{{ 'completada' if tarea.completada else 'pendiente' }}">
+                        {{ loop.index }}. {{ tarea.descripcion }}
+                    </span>
+                    <span>
+                        {% if not tarea.completada %}
+                            <a href="/completar/{{ loop.index }}">✅</a>
+                        {% else %}
+                            <a href="/desmarcar/{{ loop.index }}">🔄</a>
+                        {% endif %}
+                        <a href="/eliminar/{{ loop.index }}">🗑️</a>
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

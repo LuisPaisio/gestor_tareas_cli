@@ -1,7 +1,7 @@
 [
     {
         "descripcion": "Estudiar Python con Copilot",
-        "completada": false,
+        "completada": true,
         "creada": "2025-11-04T19:41:00.100467"
     },
     {
@@ -13,5 +13,10 @@
         "descripcion": "Probar test",
         "completada": false,
         "creada": "2025-11-04T20:01:00.680076"
+    },
+    {
+        "descripcion": "Agregar HTML y CSS al Gestor de Tareas (Servidor Flask)",
+        "completada": false,
+        "creada": "2025-11-04T20:43:48.421974"
     }
 ]
