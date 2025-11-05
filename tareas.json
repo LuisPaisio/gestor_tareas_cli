@@ -1,22 +1,12 @@
 [
     {
         "descripcion": "Estudiar Python con Copilot",
-        "completada": true,
-        "creada": "2025-11-04T19:41:00.100467"
+        "completada": false,
+        "fecha": "2025-11-04T19:41:00.100467"
     },
     {
-        "descripcion": "Hacer mi primer programa CLI",
+        "descripcion": "Armar web simple del Gestor de Tareas con Flask",
         "completada": false,
-        "creada": "2025-11-04T19:41:12.937985"
-    },
-    {
-        "descripcion": "Probar test",
-        "completada": false,
-        "creada": "2025-11-04T20:01:00.680076"
-    },
-    {
-        "descripcion": "Agregar HTML y CSS al Gestor de Tareas (Servidor Flask)",
-        "completada": false,
-        "creada": "2025-11-04T20:43:48.421974"
+        "fecha": "2025-11-04T22:43:55.285964"
     }
 ]

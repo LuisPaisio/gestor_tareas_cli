@@ -27,9 +27,15 @@ def index():
         tareas = [t for t in tareas if not t["completada"]]
     if solo_hoy:
         hoy = datetime.now().date().isoformat()
-        tareas = [t for t in tareas if t["fecha"].startswith(hoy)]
-    tareas.sort(key=lambda t: t.get("fecha", ""), reverse=orden_descendente)
+        tareas = [t for t in tareas if t.get("fecha", "").startswith(hoy)]
+#    tareas.sort(key=lambda t: t.get("fecha", ""), reverse=orden_descendente)
 
+    for t in tareas:
+        try:
+            t["fecha_formateada"] = datetime.fromisoformat(t["fecha"]).strftime("%d/%m/%Y %H:%M")
+        except:
+            t["fecha_formateada"] = t.get("fecha", "")
+    
     return render_template("index.html", tareas=tareas)
 
 @app.route("/agregar", methods=["POST"])

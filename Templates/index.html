@@ -32,20 +32,28 @@
         <ul>
             {% for tarea in tareas %}
                 <li>
-                    <span class="{{ 'completada' if tarea.completada else 'pendiente' }}">
-                        {{ loop.index }}. {{ tarea.descripcion }}
-                    </span>
-                    <span>
+                    <div class="tarea-contenido">
+                        <span class="{{ 'completada' if tarea.completada else 'pendiente' }}">
+                            {{ loop.index }}. {{ tarea.descripcion }}
+                            <br>
+                            <small>{{ tarea.fecha_formateada }}</small>
+                        </span>
+                    </div>
+                    <div class="tarea-iconos">
                         {% if not tarea.completada %}
                             <a href="/completar/{{ loop.index }}">✅</a>
                         {% else %}
                             <a href="/desmarcar/{{ loop.index }}">🔄</a>
                         {% endif %}
-                        <a href="/eliminar/{{ loop.index }}">🗑️</a>
-                    </span>
+                            <a href="/eliminar/{{ loop.index }}">🗑️</a>
+                    </div>
                 </li>
             {% endfor %}
         </ul>
+        <footer>
+            <p>Desarrollado por <a href="https://www.linkedin.com/in/luis-paisio" target="_blank">Luis Paisio</a></p>
+        </footer> 
+
     </div>
 </body>
 </html>

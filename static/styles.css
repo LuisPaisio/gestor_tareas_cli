@@ -1,16 +1,28 @@
+h1 {
+    text-align:center;
+    margin-bottom: 1em;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
-    margin: 2em;
+    margin: 0;
+    padding: 0;
     color: #333;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ocupa toda la altura de la pantalla */
 }
 
 .container {
     width: auto;
     max-width: 600px;
     min-width: 300px;
+    padding: 2em;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 form {
@@ -44,17 +56,35 @@ button:hover {
 ul {
     list-style-type: none;
     padding: 0;
+    height: 500px;
+    max-height: 500px; /* ajustable según tu diseño */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    scroll-behavior: smooth;
 }
 
 li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
     margin-bottom: 0.5em;
     padding: 0.5em;
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tarea-contenido {
+    flex: 1;
+    word-break: break-word;
+}
+
+.tarea-iconos {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 0.5em;
+    flex-shrink: 0;
 }
 
 .completada {
@@ -71,4 +101,37 @@ a {
     margin-left: 0.5em;
     text-decoration: none;
     font-size: 1.2em;
+}
+
+footer {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+footer a {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tarea-iconos {
+        justify-content: flex-start;
+    }
+}
+
+small {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 0.2em;
 }

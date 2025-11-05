@@ -31,7 +31,7 @@ def agregar_tarea(descripcion):
     nueva_tarea = {
         "descripcion": descripcion,
         "completada": False,
-        "creada": datetime.now().isoformat()
+        "fecha": datetime.now().isoformat()
     }
     tareas.append(nueva_tarea)
     guardar_tareas(tareas)
