@@ -53,15 +53,15 @@ def listar_tareas(solo_completadas=False, solo_pendientes=False, solo_hoy=False,
         hoy = datetime.now().date()
         tareas = [
             t for t in tareas
-            if "creada" in t and datetime.fromisoformat(t["creada"]).date() == hoy
+            if "fecha" in t and datetime.fromisoformat(t["fecha"]).date() == hoy
         ]
 
-    tareas.sort(key=lambda t: t.get("creada", ""), reverse=orden_descendente)
+    tareas.sort(key=lambda t: t.get("fecha", ""), reverse=orden_descendente)
 
     print(Fore.YELLOW + "\n📋 Lista de tareas:" + Style.RESET_ALL)
     for i, tarea in enumerate(tareas, start=1):
         estado = "✅" if tarea["completada"] else "🔲"
-        fecha_iso = tarea.get("creada")
+        fecha_iso = tarea.get("fecha")
         if fecha_iso:
             try:
                 fecha_obj = datetime.fromisoformat(fecha_iso)

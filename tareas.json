@@ -1,12 +1,22 @@
 [
     {
-        "descripcion": "Estudiar Python con Copilot",
-        "completada": false,
-        "fecha": "2025-11-04T19:41:00.100467"
+        "descripcion": "Sacar la basura",
+        "completada": true,
+        "fecha": "2025-11-04T23:00:13.868175"
     },
     {
-        "descripcion": "Armar web simple del Gestor de Tareas con Flask",
+        "descripcion": "Estudiar",
+        "completada": true,
+        "fecha": "2025-11-04T23:00:28.539712"
+    },
+    {
+        "descripcion": "Hacer curso programaci\u00f3n",
         "completada": false,
-        "fecha": "2025-11-04T22:43:55.285964"
+        "fecha": "2025-11-04T23:00:36.967559"
+    },
+    {
+        "descripcion": "Ir Gimnasio",
+        "completada": false,
+        "fecha": "2025-11-04T23:00:54.257805"
     }
 ]
